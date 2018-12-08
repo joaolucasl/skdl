@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "__error": "Not found",
+    ".vscode": true,
+    "api\\node_modules": true
+  }
+}

@@ -1,6 +1,7 @@
 import Hapi, { ServerRoute } from 'hapi';
 import config from 'config';
-import providerController from './application/controllers/provider.controller';
+import "reflect-metadata"
+import ProviderController from './application/controllers/ProviderController';
 
 const server = new Hapi.Server({
   port: config.get('server.port'),
@@ -8,7 +9,7 @@ const server = new Hapi.Server({
 
 const routes: ServerRoute[] = []
 
-routes.concat(providerController.routes)
+routes.concat(ProviderController.routes)
 
 routes.forEach(r => server.route(r))
 

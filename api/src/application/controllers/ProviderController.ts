@@ -1,4 +1,4 @@
-import { Controller } from "./controller";
+import { Controller } from "./Controller";
 import { ServerRoute } from "hapi";
 
 const getProviders: ServerRoute = {

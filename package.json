@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "pg": "^7.7.1",
+    "reflect-metadata": "^0.1.12",
+    "typeorm": "^0.2.9"
+  }
+}

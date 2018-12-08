@@ -1,5 +1,14 @@
 {
   "server": {
-    "port": "3030"
+    "port": "3030",
+    "database": {
+      "type": "postsgres",
+      "host": "localhost",
+      "port": 5432,
+      "username": "api",
+      "password": "4G3ND4",
+      "database": "skdl",
+      "schema": "skdl_api"
+    }
   }
 }

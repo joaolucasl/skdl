@@ -9,7 +9,8 @@
       "password": "4G3ND4",
       "database": "skdl",
       "schema": "skdl_api",
-      "synchronize": true
+      "synchronize": true,
+      "logging": true
     }
   }
 }

@@ -4,7 +4,7 @@ import Provider from "./Provider";
 @Entity()
 export default class TimeSlot {
     @PrimaryGeneratedColumn()
-    id!: string
+    id!: number
 
     @OneToOne(type => Provider)
     @JoinColumn()

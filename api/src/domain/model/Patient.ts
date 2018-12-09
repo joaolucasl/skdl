@@ -4,7 +4,7 @@ import Login from "./Login";
 @Entity()
 export default class Patient {
     @PrimaryGeneratedColumn()
-    id!: string
+    id!: number
 
     @OneToOne(type => Login)
     @JoinColumn()

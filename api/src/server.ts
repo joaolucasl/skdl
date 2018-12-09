@@ -1,7 +1,8 @@
+import "reflect-metadata"
 import Hapi, { ServerRoute } from 'hapi';
 import config from 'config';
-import "reflect-metadata"
 import ProviderController from './application/controllers/ProviderController';
+import { DBManager } from './infrastructure/persistence/DBManager';
 
 const server = new Hapi.Server({
   port: config.get('server.port'),
@@ -15,6 +16,7 @@ routes.forEach(r => server.route(r))
 
 async function start() {
   try {
+    await DBManager.init()
     await server.start()
   } catch (err) {
     console.log(err)

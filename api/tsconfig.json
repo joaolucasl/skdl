@@ -13,8 +13,9 @@
         "strict": true,
         "target": "ES6",
         "noUnusedLocals": false,
-        "noUnusedParameters": true,
+        "noUnusedParameters": false,
         "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true
+        "noFallthroughCasesInSwitch": true,
+        "experimentalDecorators": true,
     }
 }

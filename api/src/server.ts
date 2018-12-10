@@ -4,26 +4,37 @@ import config from 'config';
 import ProviderController from './application/controllers/ProviderController';
 import { DBManager } from './infrastructure/persistence/DBManager';
 
-const server = new Hapi.Server({
-  port: config.get('server.port'),
-})
-
-const routes: ServerRoute[] = []
-
-routes.concat(ProviderController.routes)
-
-routes.forEach(r => server.route(r))
-
-async function start() {
+(async () => {
   try {
     await DBManager.init()
-    await server.start()
   } catch (err) {
-    console.log(err)
+    console.error(err)
     process.exit(1)
   }
 
-  console.log('Server running at:', server.info.address)
-}
+  const server = new Hapi.Server({
+    port: config.get('server.port'),
+  })
 
-start()
+  let routes: ServerRoute[] = []
+
+  routes = routes.concat(
+    new ProviderController().routes
+  )
+
+  server.route(routes)
+
+  async function start() {
+    try {
+      await server.start()
+    } catch (err) {
+      console.log(err)
+      process.exit(1)
+    }
+
+    console.log('Server running at:', server.info.address)
+    console.log('Routes:', server.table())
+  }
+
+  start()
+})()

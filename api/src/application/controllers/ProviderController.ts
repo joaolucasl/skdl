@@ -1,29 +1,25 @@
 import { Controller } from "./Controller";
 import { ServerRoute } from "hapi";
-
-const getProviders: ServerRoute = {
-  method: 'GET',
-  path: '/providers',
-  handler: (req, h) => ({
-    providers: [
-      {
-        name: 'Joaquim Jose',
-        slots: [
-          {
-            start: '',
-            end: '',
-          },
-        ],
-      },
-    ],
-  }),
-}
+import { getConnection } from "typeorm";
+import { DBManager } from "../../infrastructure/persistence/DBManager";
+import { ProviderRepository } from "../../infrastructure/persistence/repositories/ProviderRepository";
 
 
-const ProviderController: Controller = {
-  routes: [
-    getProviders
-  ]
+class ProviderController implements Controller {
+  connection = DBManager.getConnection()
+  providerRepository = this.connection.getCustomRepository(ProviderRepository);
+
+  getProviders: ServerRoute = {
+    method: 'GET',
+    path: '/providers',
+    handler: async (req, h) => {
+      return await this.providerRepository.find()
+    },
+  }
+
+  routes: ServerRoute[] = [
+    this.getProviders
+  ];
 }
 
 export default ProviderController;

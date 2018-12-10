@@ -23,7 +23,7 @@ export class DBManager {
         const connection = await createConnection(connectionOptions)
     }
 
-    public getConnection() {
+    static getConnection() {
         return getTypeORMConnection();
     }
 }

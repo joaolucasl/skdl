@@ -8,8 +8,11 @@
       "type": "node",
       "request": "launch",
       "name": "Launch API via NPM",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run-script", "debug"],
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": [
+        "run",
+        "debug"
+      ],
       "cwd": "${workspaceFolder}/api",
       "port": 5858,
       "useWSL": true

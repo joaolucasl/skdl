@@ -4,7 +4,7 @@
   "description": "An appointment scheduling API",
   "main": "src/server.js",
   "scripts": {
-    "debug": "ts-node --nolazy --inspect-brk=5858 src/server.ts"
+    "debug": "node -r ts-node/register --nolazy --inspect-brk=5858 src/server.ts"
   },
   "author": "João Lucas Lucchetta",
   "license": "MIT",

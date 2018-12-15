@@ -4,7 +4,7 @@ import config from 'config';
 import ProviderController from './application/controllers/ProviderController';
 import { DBManager } from './infrastructure/persistence/DBManager';
 
-(async () => {
+async function start() {
   try {
     await DBManager.init()
   } catch (err) {
@@ -24,17 +24,15 @@ import { DBManager } from './infrastructure/persistence/DBManager';
 
   server.route(routes)
 
-  async function start() {
-    try {
-      await server.start()
-    } catch (err) {
-      console.log(err)
-      process.exit(1)
-    }
 
-    console.log('Server running at:', server.info.address)
-    console.log('Routes:', server.table())
+  try {
+    await server.start()
+  } catch (err) {
+    console.log(err)
+    process.exit(1)
   }
 
-  start()
-})()
+  console.log('Server running at:', server.info.address)
+}
+
+start()

@@ -9,8 +9,14 @@
       "password": "4G3ND4",
       "database": "skdl",
       "schema": "skdl_api",
-      "synchronize": true,
-      "logging": true
+      "synchronize": true
+    },
+    "jwt": {
+      "secret": "Pp6Bv0g/G3+FFQcns/X1YHHPjs3mPKOzktwyvOAR3zePMWu9FN3ydxFF940Z9pac9hi9AmQLfDW6Hvja3kH4GfTXBE3mCKErE1piRBHHHsYd9O9ChyZ93ixJbOzejZHpDZxRuDcYjLyTzveK6GfX5ae2UJWIHYKuA+h6YaPsyMuyqBrBAd68JhGA8Fg2Z5+gyx2T3AEEjcN3kT03mCqPz7Dx8n2JtfG/XAb8oCpqRGCVoJR+/0gxF8I0SASBEykAt+0F853Uu66fsswgXe0T2EkLS2bzwHd1fr1zUlZR1l5KgWuxrMyDf4ejAA9sgTrN9uBx8g6fro+vJFobFYYbEA=="
+    },
+    "security": {
+      "algorithm": "sha256",
+      "salt": "l5Tz7nEKNLpvWAexU4edmbNTuMnC0+t8Ot3AMDm/eGnREoBJ5Edc/aSD+zjW5NjY6m5qOd3tuslAb0budjok+g=="
     }
   }
 }

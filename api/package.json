@@ -11,10 +11,13 @@
   "dependencies": {
     "@types/config": "^0.0.34",
     "@types/hapi": "^17.8.0",
+    "@types/hapi-auth-jwt2": "^8.0.2",
     "@types/node": "^10.12.12",
     "@types/ramda": "^0.25.42",
     "config": "^3.0.0",
     "hapi": "^17.8.1",
+    "hapi-auth-jwt2": "^8.2.0",
+    "jsonwebtoken": "^8.4.0",
     "pg": "^7.7.1",
     "ramda": "^0.26.1",
     "reflect-metadata": "^0.1.12",

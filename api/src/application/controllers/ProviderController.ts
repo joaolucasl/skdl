@@ -12,6 +12,7 @@ class ProviderController implements Controller {
   getProviders: ServerRoute = {
     method: 'GET',
     path: '/providers',
+    options: { auth: 'jwt' },
     handler: async (req, h) => {
       return await this.providerRepository.find()
     },
